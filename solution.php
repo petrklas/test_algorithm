@@ -2,8 +2,6 @@
  * @return boolean The destination is reachable or not
  */
 function canTravelTo(array $gameMatrix, int $fromRow, int $fromColumn, int $toRow, int $toColumn): bool {
-  $rows = count($gameMatrix);
-  $columns = count($gameMatrix[0]);
 
   // out of the bounds
   if (!isset($gameMatrix[$toRow][$toColumn])) {
