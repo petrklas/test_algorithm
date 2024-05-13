@@ -1,6 +1,6 @@
 # Turn-based strategy algorithm
 
-You are developing a game where you want to check if a player standing on the certain position (X,Y) on the map is capable to move to the desired location. The map is a 2D array made of tiles - tile marked as TRUE means LAND free to move, tile marked as FALSE means WALL - forbidden to move.  
+You are developing a game where you want to check if a player standing in a certain position (X,Y) on the map is capable of moving to the desired location. The map is a 2D array made of tiles - tile marked as TRUE means LAND free to move, tile marked as FALSE means WALL - forbidden to move.
 
 Here are the rules:
 - Player can move one cell to the left
