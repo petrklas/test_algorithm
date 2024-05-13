@@ -17,7 +17,7 @@ Here are the rules:
 | X | O | P | O | O |
 | X | X | O | X | X |
 
-```
+```php
 <?php
 
 function moveAllowed(array $matrix, int $fromRow, int $fromColumn, int $toRow, int $toColumn) : bool
