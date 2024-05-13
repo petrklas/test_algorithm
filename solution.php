@@ -6,7 +6,7 @@ function canTravelTo(array $gameMatrix, int $fromRow, int $fromColumn, int $toRo
   $columns = count($gameMatrix[0]);
 
   // out of the bounds
-  if ($toRow > ($rows - 1) || $toColumn > ($columns - 1) || $toRow < 0 || $toColumn < 0) {
+  if (!isset($gameMatrix[$toRow][$toColumn])) {
     return false;
   }
 
