@@ -1,47 +1,31 @@
+# Turn-based strategy algorithm
+
+You are developing a game where you want to check if a player, standing on certain position as capable to move to the desired location.
+
+Here are the rules:
+- Player can move one cell left
+- Player can move one cell top
+- Player can move one cell bottom
+- Player can move one or two cells righ
+- Player can't move to the cell, where is the wall (marked as false in the matrix)
+- Player can't move out of map / matrix
+
+
+|  |  |  |  |  |
+|---|---|---|---|---|
+| X | X | O | X | X |
+| X | O | P | O | O |
+| X | X | O | X | X |
+
 ```
 <?php
 
-function canTravelTo(array $gameMatrix, int $fromRow, int $fromColumn, 
-                     int $toRow, int $toColumn) : bool
+function moveAllowed(array $matrix, int $fromRow, int $fromColumn, int $toRow, int $toColumn) : bool
 {
-  $rows = count($gameMatrix); 
-  $columns = count($gameMatrix[0]);
-    
-  
-  if($toRow > ($rows - 1) || $toColumn > ($columns - 1))
-    return false;
-  
-  if($toRow < 0 || $toColumn < 0)
-    return false;
-  
-
-  if(!$gameMatrix[$toRow][$toColumn]) {
-    return false;
-  }    
-
-  foreach(availableMoves($fromRow, $fromColumn) as $move) {
-    if($move[0] == $toRow && $move[1] == $toColumn) {
-      return true;
-    }
-  }
-
   return false;
-
 }
 
-function availableMoves($row, $column): array {
-  $moves = [];
-
-  $moves[] = [$row - 1, $column];
-  $moves[] = [$row , $column-1];
-  $moves[] = [$row, $column + 1];
-  $moves[] = [$row, $column + 2];
-  $moves[] = [$row + 1, $column];
-    
-   return $moves;
-}
-
-$gameMatrix = [
+$matrix = [
     [false, true,  true,  false, false, false],
     [true,  true,  true,  false, false, false],
     [true,  true,  true,  true,  true,  true],
@@ -51,6 +35,9 @@ $gameMatrix = [
   ];
   
 
-echo canTravelTo($gameMatrix, 3, 2, 2, 2) ? "true\n" : "false\n"; // true, Valid move
-echo canTravelTo($gameMatrix, 3, 2, 3, 4) ? "true\n" : "false\n"; // false, Can't travel through land
-echo canTravelTo($gameMatrix, 3, 2, 6, 2) ? "true\n" : "false\n"; // false, Out of bounds```
+echo moveAllowed($matrix, 3, 2, 2, 2) ? "true\n" : "false\n"; // true, Valid move
+echo moveAllowed($matrix, 3, 2, 1, 1) ? "true\n" : "false\n"; // false, Invalid move
+echo moveAllowed($matrix, 3, 2, 3, 4) ? "true\n" : "false\n"; // false, Can't travel through land
+echo moveAllowed($matrix, 3, 2, 6, 2) ? "true\n" : "false\n"; // false, Out of bounds
+echo moveAllowed($matrix, 3, 2, 1, 1) ? "true\n" : "false\n"; // false, Invalid move
+```
