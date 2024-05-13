@@ -37,7 +37,6 @@ $matrix = [
 
 echo moveAllowed($matrix, 3, 2, 2, 2) ? "true\n" : "false\n"; // true, Valid move
 echo moveAllowed($matrix, 3, 2, 1, 1) ? "true\n" : "false\n"; // false, Invalid move
-echo moveAllowed($matrix, 3, 2, 3, 4) ? "true\n" : "false\n"; // false, Can't travel through land
+echo moveAllowed($matrix, 3, 2, 3, 4) ? "true\n" : "false\n"; // false, Can't travel through wall
 echo moveAllowed($matrix, 3, 2, 6, 2) ? "true\n" : "false\n"; // false, Out of bounds
-echo moveAllowed($matrix, 3, 2, 1, 1) ? "true\n" : "false\n"; // false, Invalid move
 ```
