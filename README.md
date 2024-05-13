@@ -8,7 +8,7 @@ Here are the rules:
 - Player can move one cell to the bottom
 - Player can move one or two cells to the right
 - Player can't move to the cell, where is the wall (marked as false in the matrix)
-- Player can't move out of map / matrix
+- Player can't move out of map
 
 
 |  |  |  |  |  |
@@ -20,12 +20,12 @@ Here are the rules:
 ```php
 <?php
 
-function moveAllowed(array $matrix, int $fromRow, int $fromColumn, int $toRow, int $toColumn) : bool
+function moveAllowed(array $map, int $fromRow, int $fromColumn, int $toRow, int $toColumn) : bool
 {
   return false;
 }
 
-$matrix = [
+$map = [
     [false, true,  true,  false, false, false],
     [true,  true,  true,  false, false, false],
     [true,  true,  true,  true,  true,  true],
@@ -35,8 +35,8 @@ $matrix = [
   ];
   
 
-echo moveAllowed($matrix, 3, 2, 2, 2) ? "true\n" : "false\n"; // true, Valid move
-echo moveAllowed($matrix, 3, 2, 1, 1) ? "true\n" : "false\n"; // false, Invalid move
-echo moveAllowed($matrix, 3, 2, 3, 4) ? "true\n" : "false\n"; // false, Can't travel through wall
-echo moveAllowed($matrix, 3, 2, 6, 2) ? "true\n" : "false\n"; // false, Out of bounds
+echo moveAllowed($map, 3, 2, 2, 2) ? "true\n" : "false\n"; // true, Valid move
+echo moveAllowed($map, 3, 2, 1, 1) ? "true\n" : "false\n"; // false, Invalid move
+echo moveAllowed($map, 3, 2, 3, 4) ? "true\n" : "false\n"; // false, Can't travel through wall
+echo moveAllowed($map, 3, 2, 6, 2) ? "true\n" : "false\n"; // false, Out of bounds
 ```
