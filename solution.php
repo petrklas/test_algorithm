@@ -4,7 +4,7 @@
 function canTravelTo(array $gameMatrix, int $fromRow, int $fromColumn, int $toRow, int $toColumn): bool {
 
   // out of the bounds
-  if (!isset($gameMatrix[$toRow][$toColumn])) {
+  if (!isset($gameMatrix[$toRow - 1][$toColumn - 1])) {
     return false;
   }
 
