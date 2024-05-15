@@ -21,7 +21,8 @@ Combining conditions for allowed moves and possibility to move only on LAND givi
 - Player can't move to the cell, where is the wall (marked as false in the matrix)
 - Player can't move out of map
 
-
+## Requirements
+Finish the function moveAllowed, that accept tha parameter map, current position of player and desired destionation. This function should return TRUE in case that move is alloed and FALSE if not possible.
 
 
 ```php
