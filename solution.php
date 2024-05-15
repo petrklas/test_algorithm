@@ -3,13 +3,8 @@
  */
 function canTravelTo(array $gameMatrix, int $fromRow, int $fromColumn, int $toRow, int $toColumn): bool {
 
-  // out of the bounds
-  if (!isset($gameMatrix[$toRow - 1][$toColumn - 1])) {
-    return false;
-  }
-
-  // hitting the wall
-  if (!$gameMatrix[$toRow][$toColumn]) {
+  // out of the bounds OR hitting the WALL
+  if (empty($gameMatrix[$toRow - 1][$toColumn - 1])) {
     return false;
   }
 
