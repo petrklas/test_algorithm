@@ -22,8 +22,7 @@ Combining conditions for allowed moves and possibility to move only on LAND givi
 - Player can't move out of map
 
 ## Requirements
-Finish the function moveAllowed, that accept tha parameter map, current position of player and desired destionation. This function should return TRUE in case that move is alloed and FALSE if not possible.
-
+Finish the function moveAllowed, that accepts these params: map, current position of player (row and column) and desired destination (row and column). This function should return TRUE in case that move is allowed and FALSE if not possible.
 
 ```php
 <?php
