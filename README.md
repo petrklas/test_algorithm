@@ -10,7 +10,10 @@ You are developing a game where you want to check if a player standing in a cert
 | Not Allowed | Allowed | Player | Allowed | Allowed |
 | Not Allowed | Not Allowed | Allowed | Not Allowed | Not Allowed |
 
-Here are the rules:
+## Final rules
+
+Combining conditions for allowed moves and possibility to move only on LAND giving these rules:
+
 - Player can move one cell to the left
 - Player can move one cell to the top
 - Player can move one cell to the bottom
