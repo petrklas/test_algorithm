@@ -4,7 +4,7 @@
 function canTravelTo(array $gameMatrix, int $fromRow, int $fromColumn, int $toRow, int $toColumn): bool {
 
   // out of the bounds OR hitting the WALL
-  if (empty($gameMatrix[$toRow - 1][$toColumn - 1])) {
+  if (empty($gameMatrix[$toRow][$toColumn])) {
     return false;
   }
 
