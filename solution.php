@@ -1,7 +1,7 @@
 /**
  * @return boolean The destination is reachable or not
  */
-function canTravelTo(array $gameMatrix, int $fromRow, int $fromColumn, int $toRow, int $toColumn): bool {
+function moveAllowed(array $gameMatrix, int $fromRow, int $fromColumn, int $toRow, int $toColumn): bool {
 
   // out of the bounds OR hitting the WALL
   if (empty($gameMatrix[$toRow][$toColumn])) {
@@ -31,7 +31,7 @@ function availableMoves($row, $column): array
   return $moves;
 }
 
-$gameMatrix = [
+$map = [
   [false, true,  true,  false, false, false],
   [true,  true,  true,  false, false, false],
   [true,  true,  true,  true,  true,  true],
@@ -41,7 +41,9 @@ $gameMatrix = [
 ];
 
 
-echo canTravelTo($gameMatrix, 3, 2, 2, 2) ? "true\n" : "false\n"; // true, Valid move
-echo canTravelTo($gameMatrix, 3, 2, 3, 4) ? "true\n" : "false\n"; // false, Can't travel through wall
-echo canTravelTo($gameMatrix, 3, 2, 6, 2) ? "true\n" : "false\n"; // false, Out of bounds
-echo canTravelTo($gameMatrix, 3, 2, 2, 1) ? "true\n" : "false\n"; // false, Invalid move
+echo moveAllowed($map, 3, 2, 2, 2) ? "true\n" : "false\n"; // true, Valid move
+echo moveAllowed($map, 3, 2, 2, 1) ? "true\n" : "false\n"; // false, Invalid move
+echo moveAllowed($map, 3, 2, 1, 1) ? "true\n" : "false\n"; // false, Invalid move
+echo moveAllowed($map, 3, 2, 3, 4) ? "true\n" : "false\n"; // true, Valid move
+echo moveAllowed($map, 3, 2, 3, 3) ? "true\n" : "false\n"; // false, Can't travel through wall
+echo moveAllowed($map, 3, 2, 6, 2) ? "true\n" : "false\n"; // false, Out of bounds
