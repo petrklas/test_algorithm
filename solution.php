@@ -1,3 +1,4 @@
+<?php
 /**
  * @return boolean The destination is reachable or not
  */
