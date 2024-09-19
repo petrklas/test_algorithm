@@ -43,6 +43,7 @@ $map = [
   
 
 echo moveAllowed($map, 3, 2, 2, 2) ? "true\n" : "false\n"; // true, Valid move
+echo moveAllowed($map, 3, 2, 2, 1) ? "true\n" : "false\n"; // false, Invalid move
 echo moveAllowed($map, 3, 2, 1, 1) ? "true\n" : "false\n"; // false, Invalid move
 echo moveAllowed($map, 3, 2, 3, 4) ? "true\n" : "false\n"; // true, Valid move
 echo moveAllowed($map, 3, 2, 3, 3) ? "true\n" : "false\n"; // false, Can't travel through wall
