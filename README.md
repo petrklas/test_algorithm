@@ -2,14 +2,6 @@
 
 You are developing a game where you want to check if a player standing in a certain position (X,Y) on the map is capable of moving to the desired location. The map is a 2D array made of tiles - tile marked as TRUE means LAND free to move, tile marked as FALSE means WALL - forbidden to move. At the same time, player can always move only 1 tile to the left, top, bottom and 1 or 2 tiles to the right. Diagonal moves are not allowed.
 
-## Allowed moves
-
-|  |  |  |  |  |
-|---|---|---|---|---|
-| Not Allowed | Not Allowed | Allowed | Not Allowed | Not Allowed |
-| Not Allowed | Allowed | Player | Allowed | Allowed |
-| Not Allowed | Not Allowed | Allowed | Not Allowed | Not Allowed |
-
 ## Final rules
 
 Combining conditions for allowed moves and possibility to move only on LAND giving these rules:
